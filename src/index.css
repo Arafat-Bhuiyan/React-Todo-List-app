@@ -21,6 +21,7 @@ button{
   transition: background-color 0.5s ease;
 }
 .add-btn{
+  margin-left: 5px;
   background-color: hsl(125, 47%, 54%);
 }
 .add-btn:hover{
