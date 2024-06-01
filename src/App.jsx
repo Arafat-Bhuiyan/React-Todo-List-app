@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <h2>My Todo List</h2>
+      
       <TodoList></TodoList>
     </>
   )
