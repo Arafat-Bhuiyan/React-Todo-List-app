@@ -25,8 +25,8 @@ function TodoList(){
     }
 
     return (
-        <div>
-            <h2>My Todo List</h2>
+        <div className="to-do-list">
+            <h1>To-Do List</h1>
 
             <div>
                 <input type="text" placeholder="Enter a task..." 
