@@ -27,6 +27,13 @@ button{
 .add-btn:hover{
   background-color: hsl(125, 47%, 44%);
 }
+.edit-btn{
+  background-color: hsl(125, 47%, 54%);
+  margin-left: 5px;
+}
+.edit-btn:hover{
+  background-color: hsl(125, 47%, 44%);
+}
 .delete-btn{
   background-color: hsl(10, 90%, 50%);
 }
