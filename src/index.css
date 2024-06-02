@@ -53,6 +53,10 @@ input[type="text"]{
   border-radius: 5px;
   color: hsl(0, 0%, 0%, 0.5);
 }
+.search-input{
+  margin-bottom: 5px;
+  width: 505px;
+}
 ol{
   padding: 0;
 }

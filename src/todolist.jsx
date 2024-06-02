@@ -4,6 +4,9 @@ function TodoList() {
     const [tasks, setTasks] = useState(["Anik", "Arafat", "Chisty"]);
     const [newTask, setNewTask] = useState("");
     const [isEdit, setIsEdit] = useState(false);
+    // 1. New State for Search Query
+    const [searchQuery, setSearchQuery] = useState("");
+
 
     // console.log("isEdit -", isEdit)
 
@@ -50,10 +53,24 @@ function TodoList() {
             setTasks(updatedTasks)
         }
     }
+    // 3. Filtering Tasks Based on Search Query
+    const searchTasksFiltered = tasks.filter(task => task.toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
     return (
         <div className="to-do-list">
             <h1>To-Do List</h1>
+
+            {/* 2. Search Input Field */}
+            <div>
+                <input
+                    type="text"
+                    placeholder="Search tasks..."
+                    className="search-input"
+                    value={searchQuery}
+                    onChange={event => setSearchQuery(event.target.value)}
+                />
+            </div>
 
             <div>
                 <input
@@ -84,17 +101,18 @@ function TodoList() {
 
             </div>
 
+            {/* 4. Rendering Filtered Tasks */}
             <ol>
-                {tasks.map((task, index) =>
+                {searchTasksFiltered.map((task, index) =>
                     <li key={index}>
 
-                        {isEdit === false ? <span className="text">{task} </span> : 
-                        (
-                            <input 
-                                placeholder={task}
-                                onChange={(event) => handleUpdateValue(event, index)}
-                            />
-                        ) 
+                        {isEdit === false ? <span className="text">{task} </span> :
+                            (
+                                <input
+                                    placeholder={task}
+                                    onChange={(event) => handleUpdateValue(event, index)}
+                                />
+                            )
                         }
 
                         <button
